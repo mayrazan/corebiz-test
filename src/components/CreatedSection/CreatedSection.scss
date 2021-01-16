@@ -1,0 +1,33 @@
+.created {
+  display: flex;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10.6017px;
+  line-height: 14px;
+  color: #ffffff;
+
+  .content {
+    margin-right: 25px;
+
+    @media screen and (max-width: 650px) {
+      margin-left: 69px;
+      margin-bottom: 7px;
+    }
+
+    .corebiz {
+      width: 76px;
+      height: 18px;
+      margin-top: 2px;
+    }
+
+    .text {
+      margin-bottom: auto;
+    }
+    .img-vtex {
+      width: 52.28px;
+      height: 18.72px;
+      margin-top: 4px;
+    }
+  }
+}

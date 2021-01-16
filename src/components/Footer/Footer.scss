@@ -1,0 +1,21 @@
+footer {
+  margin-top: auto;
+  background-color: #000;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: Nunito;
+  /* width: 100%; */
+  height: 100%;
+  max-height: 233px;
+  /* position: absolute;
+  bottom: 0;
+  left: 0; */
+
+  @media screen and (max-width: 650px) {
+    min-width: 320px;
+    max-height: 400px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
