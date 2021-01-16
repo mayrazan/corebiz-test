@@ -1,0 +1,112 @@
+.header {
+  display: flex;
+  //flex-wrap: wrap;
+  align-items: center;
+  max-height: 80px;
+  height: 100vh;
+  justify-content: space-evenly;
+
+  @media screen and (max-width: 414px) {
+    flex-wrap: wrap;
+    padding: 0 20px;
+    width: fit-content;
+    justify-content: space-between;
+  }
+
+  .logo-corebiz {
+    display: flex;
+    flex-shrink: 8;
+    width: 25%;
+    /* height: auto; */
+    /* width: 181px; */
+    height: 41px;
+
+    @media screen and (max-width: 414px) {
+      order: 1;
+      flex-shrink: 0;
+    }
+  }
+
+  .input-search {
+    min-width: 20%;
+    flex-basis: 60%;
+    flex-shrink: 4;
+    height: 23px;
+    outline: none;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom: 1px solid #7a7a7a;
+
+    &::placeholder {
+      background-image: url("../../assets/icons/magnifying-glass1.svg");
+      width: 18px;
+      height: 18px;
+      background-position: right;
+      background-repeat: no-repeat;
+    }
+
+    @media screen and (max-width: 414px) {
+      order: 3;
+      width: 280px;
+      flex-shrink: 0;
+      flex-basis: auto;
+    }
+  }
+
+  .my-account-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    color: #7a7a7a;
+    display: flex;
+    /* width: 97px; */
+    flex-shrink: 0;
+
+    &:before {
+      content: "";
+      background-image: url("../../assets/icons/user1.svg");
+      background-repeat: no-repeat;
+      width: 30%;
+      height: 18px;
+      margin-right: 5px;
+    }
+
+    @media screen and (max-width: 414px) {
+      display: none;
+    }
+  }
+
+  .cart-value {
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 14px;
+    color: #ffffff;
+    border-radius: 50%;
+    background: #7a7a7a;
+    padding: 4px;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-shrink: 2;
+    .cart-icon {
+      margin: 5px;
+    }
+
+    @media screen and (max-width: 414px) {
+      order: 2;
+    }
+  }
+
+  .menu {
+    display: none;
+
+    @media screen and (max-width: 414px) {
+      display: block;
+    }
+  }
+ 
+}
