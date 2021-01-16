@@ -11,8 +11,9 @@
   &:last-child {
     margin-bottom: 0;
 
-    .link::before {
-      background-image: url("../../../assets/images/headphone-ico.png");
+    .link:before {
+      content: "";
+      background-image: url("../../../assets/icons/headphone-ico.png");
       margin-left: 18px;
     }
   }
@@ -25,9 +26,9 @@
     align-items: center;
     display: flex;
 
-    &::before {
+    &:before {
       content: "";
-      background-image: url("../../../assets/images/email-ico.png");
+      background-image: url("../../../assets/icons/email-ico.png");
       height: 16px;
       width: 16px;
       background-size: 100% 100%;
