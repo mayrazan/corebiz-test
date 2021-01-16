@@ -1,6 +1,6 @@
-import { Section } from "../Section/Section";
-import { Text } from "../Text/Text";
-import { Link } from "../Link/Link";
+import { Section } from "../../Section/Section";
+import { Text } from "../../Text/Text";
+import { Link } from "../../Link/Link";
 import "./AddressSection.scss";
 
 export function AddressSection(props) {

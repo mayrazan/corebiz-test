@@ -1,5 +1,5 @@
-import { Link } from "../Link/Link";
-import { Section } from "../Section/Section";
+import { Link } from "../../Link/Link";
+import { Section } from "../../Section/Section";
 import "./ContactSection.scss";
 
 export function ContactSection() {

@@ -1,8 +1,8 @@
-import { Section } from "../Section/Section";
-import { Text } from "../Text/Text";
-import { Image } from "../Image/Image";
-import vtex from "../../assets/images/vtex.png";
-import corebiz from "../../assets/images/corebiz.png";
+import { Section } from "../../Section/Section";
+import { Text } from "../../Text/Text";
+import { Image } from "../../Image/Image";
+import vtex from "../../../assets/images/vtex.png";
+import corebiz from "../../../assets/images/corebiz.png";
 import "./CreatedSection.scss";
 
 export function CreatedSection() {
