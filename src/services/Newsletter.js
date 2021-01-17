@@ -7,7 +7,7 @@ export async function createUser(userForm) {
     body: userFormJson,
     headers: { "content-type": "application/json" },
   };
-  // const proxyURL = "https://cors-anywhere.herokuapp.com/";
+
   const response = await fetch(NEWSLETTER_API, options).then((res) =>
     res.json().then((data) => data)
   );
