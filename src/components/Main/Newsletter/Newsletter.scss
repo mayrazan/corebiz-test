@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  justify-content: center;
+  min-height: 146px;
+  font-family: Lato;
+  font-style: normal;
+  //align-items: center;
+
+  .title {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 22px;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 16px;
+
+    @media screen and (max-width: 450px) {
+        margin-top: 16px;
+      }
+  }
+
+  .form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8px;
+
+    @media screen and (max-width: 450px) {
+        flex-direction: column;
+      }
+
+    .input {
+      width: 280px;
+      height: 48px;
+      background: #ffffff;
+      border: 1px solid #bdbdbd;
+      border-radius: 5px;
+      outline: none;
+      margin-right: 8px;
+
+      &::placeholder {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 14px;
+        color: #585858;
+        padding-left: 16px;
+      }
+
+      @media screen and (max-width: 450px) {
+        margin-bottom: 16px;
+      }
+    }
+
+    .btn-submit {
+      background-color: #000000;
+      border-radius: 5px;
+      width: 140px;
+      height: 48px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 14px;
+      text-align: center;
+      color: #ffffff;
+      cursor: pointer;
+      border: none;
+      outline: none;
+
+      &:hover {
+        background-color: #333333;
+      }
+
+      @media screen and (max-width: 450px) {
+        width: 288px;
+      }
+    }
+  }
+
+  .container-warning {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    width: auto;
+
+    .warning-text {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 12px;
+      color: #d7182a;
+    }
+  }
+
+  .success-text {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    color: #000000;
+  }
+
+  .information-text {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 15px;
+  }
+
+  .btn-register {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    color: #ffffff;
+    width: 328px;
+    height: 48px;
+    background: #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+  }
+}
