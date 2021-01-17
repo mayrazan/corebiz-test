@@ -29,7 +29,7 @@
           line-height: 45px;
         }
 
-        @media screen and (max-width: 414px) {
+        @media screen and (max-width: 540px) {
           position: absolute;
           width: auto;
           font-size: 20px;
@@ -44,7 +44,7 @@
         position: relative;
         float: right;
 
-        @media screen and (max-width: 414px) {
+        @media screen and (max-width: 540px) {
           width: 100%;
           position: unset;
         }

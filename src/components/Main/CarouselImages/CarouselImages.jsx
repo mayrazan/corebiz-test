@@ -1,8 +1,8 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from "react-responsive-carousel";
-import { Span } from "../Span/Span";
-import { dataCarousel } from "../../mocks/dataCarousel";
-import { Text } from "../Text/Text";
+import { Span } from "../../Span/Span";
+import { dataCarousel } from "../../../mocks/dataCarousel";
+import { Text } from "../../Text/Text";
 import "./CarouselImages.scss";
 
 export function CarouselImages() {
