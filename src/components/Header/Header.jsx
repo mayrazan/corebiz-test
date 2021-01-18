@@ -6,15 +6,11 @@ import cartIcon from "../../assets/icons/shopping-cart1.svg";
 import { Span } from "../Span/Span";
 import menuIcon from "../../assets/icons/Icon-menu.svg";
 import "./Header.scss";
-//import { useEffect, useState } from "react";
 
-export function Header() {
-  // const [width, setWidth] = useState(window.visualViewport.width);
+export function Header({ value }) {
 
-  // useEffect(() => {
-  //   setWidth(window.visualViewport.width);
-  //   window.visualViewport.addEventListener("resize", setWidth);
-  // }, [width]);
+  const cartValue =
+    value > 0 ? "cart-full cart-value" : "cart-empty cart-value";
 
   return (
     <header className="header">
@@ -26,7 +22,7 @@ export function Header() {
         className="input-search"
       />
       <Text text="Minha Conta" className="my-account-text" />
-      <Span className="cart-value" value={0}>
+      <Span className={cartValue} value={value}>
         <Image src={cartIcon} alt="carrinho" className="cart-icon" />
       </Span>
     </header>

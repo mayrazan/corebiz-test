@@ -10,7 +10,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Products.scss";
 
-export function Products() {
+export function Products({ onClick }) {
   const [products, setProducts] = useState([]);
   // const style = {
   //   textDecorationLine: "lineThrough",
@@ -114,7 +114,11 @@ export function Products() {
                     );
                   })}
 
-              <Button text="COMPRAR" className="btn-shopping"></Button>
+              <Button
+                text="COMPRAR"
+                className="btn-shopping"
+                onClick={onClick}
+              ></Button>
             </Section>
           );
         })}

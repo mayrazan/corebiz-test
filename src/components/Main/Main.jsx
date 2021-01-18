@@ -3,11 +3,11 @@ import "./Main.scss";
 import { Products } from "./Products.jsx/Products";
 import { Newsletter } from "./Newsletter/Newsletter";
 
-export function Main() {
+export function Main({ onClick }) {
   return (
     <main className="main-container">
       <CarouselImages />
-      <Products />
+      <Products onClick={onClick} />
       <Newsletter />
     </main>
   );

@@ -84,7 +84,6 @@
     line-height: 14px;
     color: #ffffff;
     border-radius: 50%;
-    background: #7a7a7a;
     padding: 4px;
     width: 14px;
     height: 14px;
@@ -92,6 +91,7 @@
     align-items: center;
     flex-direction: row-reverse;
     flex-shrink: 2;
+
     .cart-icon {
       margin: 5px;
     }
@@ -99,6 +99,14 @@
     @media screen and (max-width: 414px) {
       order: 2;
     }
+  }
+
+  .cart-full {
+    background: #F8475F;
+  }
+
+  .cart-empty {
+    background: #7a7a7a;
   }
 
   .menu {
