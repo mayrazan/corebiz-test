@@ -51,6 +51,16 @@ export function Products({ onClick }) {
     );
   };
 
+  function formatNumber(value) {
+    const result = value / 100;
+    const format = result.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+
+    return format;
+  }
+
   return (
     <div className="products-container">
       <Section className="title-section">
@@ -92,13 +102,13 @@ export function Products({ onClick }) {
                 text={
                   product.listPrice === null
                     ? ""
-                    : `de R$ ${product?.listPrice}`
+                    : `de ${formatNumber(product?.listPrice)}`
                 }
                 className="products-information-text"
               ></Text>
 
               <Text
-                text={`por R$ ${product.price}`}
+                text={`por ${formatNumber(product.price)}`}
                 className="product-price"
               ></Text>
 
@@ -108,7 +118,7 @@ export function Products({ onClick }) {
                     return (
                       <Text
                         key={data}
-                        text={`ou em ${data.quantity}x de R$ ${data.value}`}
+                        text={`ou em ${data.quantity}x de ${formatNumber(data.value)}`}
                         className="products-information-text"
                       />
                     );
