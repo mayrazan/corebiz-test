@@ -7,8 +7,7 @@ import { Span } from "../Span/Span";
 import menuIcon from "../../assets/icons/Icon-menu.svg";
 import "./Header.scss";
 
-export function Header({ value }) {
-
+export function Header({ value, search, setValue }) {
   const cartValue =
     value > 0 ? "cart-full cart-value" : "cart-empty cart-value";
 
@@ -20,6 +19,8 @@ export function Header({ value }) {
         type="text"
         placeholder="O que está procurando?"
         className="input-search"
+        setValue={setValue}
+        value={search}
       />
       <Text text="Minha Conta" className="my-account-text" />
       <Span className={cartValue} value={value}>

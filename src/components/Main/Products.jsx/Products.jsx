@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { getProducts } from "../../../services/ProductsList";
 import { Image } from "../../Image/Image";
 import { Section } from "../../Section/Section";
@@ -10,7 +10,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Products.scss";
 
-export function Products({ onClick }) {
+export function Products({ onClick, list }) {
   const [products, setProducts] = useState([]);
   // const style = {
   //   textDecorationLine: "lineThrough",
@@ -61,6 +61,28 @@ export function Products({ onClick }) {
     return format;
   }
 
+  async function searchProducts(value) {
+    const result = await products.map((element) => {
+      return element;
+    });
+
+    return result.filter((product) => {
+      return product.productName.toLowerCase().indexOf(value) > -1;
+    });
+  }
+
+  const result = searchProducts(list);
+  const [resultSearch, setResultSearch] = useState([]);
+
+
+  useEffect(() => {
+    (async () => {
+      const data = await result;
+      setResultSearch(data);
+    })();
+  }, [list]);
+
+  
   return (
     <div className="products-container">
       <Section className="title-section">
@@ -118,7 +140,9 @@ export function Products({ onClick }) {
                     return (
                       <Text
                         key={data}
-                        text={`ou em ${data.quantity}x de ${formatNumber(data.value)}`}
+                        text={`ou em ${data.quantity}x de ${formatNumber(
+                          data.value
+                        )}`}
                         className="products-information-text"
                       />
                     );
@@ -133,6 +157,11 @@ export function Products({ onClick }) {
           );
         })}
       </Carousel>
+      <div>
+        {resultSearch.map((product) => {
+          return product.productName;
+        })}
+      </div>
     </div>
   );
 }
