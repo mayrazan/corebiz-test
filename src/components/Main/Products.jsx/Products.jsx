@@ -12,16 +12,39 @@ import "./Products.scss";
 
 export function Products({ onClick, list }) {
   const [products, setProducts] = useState([]);
-  // const style = {
-  //   textDecorationLine: "lineThrough",
-  // };
+  const [resultSearch, setResultSearch] = useState([]);
 
   useEffect(() => {
     (async () => {
       const data = await getProducts();
       setProducts(data);
+      setResultSearch(data);
     })();
   }, []);
+
+  async function searchProducts(value) {
+    const result = await products.map((element) => {
+      return element;
+    });
+    if (value === null) {
+      return products;
+    } else {
+      return result.filter((product) => {
+        return product.productName.toLowerCase().indexOf(value) > -1;
+      });
+    }
+  }
+
+  const getSearchedList = useCallback(async () => {
+    const data = await searchProducts(list);
+    setResultSearch(data);
+  }, [list]);
+
+  useEffect(() => {
+    (async () => {
+      await getSearchedList();
+    })();
+  }, [getSearchedList]);
 
   const responsive = {
     superLargeDesktop: {
@@ -61,28 +84,6 @@ export function Products({ onClick, list }) {
     return format;
   }
 
-  async function searchProducts(value) {
-    const result = await products.map((element) => {
-      return element;
-    });
-
-    return result.filter((product) => {
-      return product.productName.toLowerCase().indexOf(value) > -1;
-    });
-  }
-
-  const result = searchProducts(list);
-  const [resultSearch, setResultSearch] = useState([]);
-
-
-  useEffect(() => {
-    (async () => {
-      const data = await result;
-      setResultSearch(data);
-    })();
-  }, [list]);
-
-  
   return (
     <div className="products-container">
       <Section className="title-section">
@@ -100,7 +101,7 @@ export function Products({ onClick, list }) {
         infinite={true}
         centerMode={false}
       >
-        {products.map((product) => {
+        {resultSearch.map((product) => {
           return (
             <Section key={product.productId} className="products-section">
               <Image src={product.imageUrl}></Image>
@@ -157,11 +158,6 @@ export function Products({ onClick, list }) {
           );
         })}
       </Carousel>
-      <div>
-        {resultSearch.map((product) => {
-          return product.productName;
-        })}
-      </div>
     </div>
   );
 }
